@@ -52,14 +52,7 @@ export class MyntWatch {
 
   render() {
     return (
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-card><h1>Trending</h1></ion-card>
-            <mynt-side-list ttle="Following"></mynt-side-list>
-            <mynt-side-list ttle="Wallet"></mynt-side-list>
-          </ion-col>
-          <ion-col>
+        <mynt-page>
             <ion-content>
               <ion-grid>
                 {this.data.map(item =>
@@ -76,9 +69,7 @@ export class MyntWatch {
                 </ion-infinite-scroll-content>
               </ion-infinite-scroll>
             </ion-content>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+        </mynt-page>
     );
   }
 
