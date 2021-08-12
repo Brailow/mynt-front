@@ -22,7 +22,6 @@ export class MyntPage {
           </ion-col>
         </ion-row>
       </ion-grid>
-        
       </Host>
     );
   }
