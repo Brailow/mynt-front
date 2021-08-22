@@ -53,22 +53,29 @@ export class MyntWatch {
   render() {
     return (
         <mynt-page>
-            <ion-content>
-              <ion-grid>
-                {this.data.map(item =>
-                  <ion-item>{item}
-                  </ion-item>
-                )}
-              </ion-grid>
-              <ion-infinite-scroll
-                ref={el => this.infiniteScroll = el}
-                onIonInfinite={(ev) => this.loadData(ev)}>
-                <ion-infinite-scroll-content
-                  loadingSpinner="bubbles"
-                  loadingText="Loading more data...">
-                </ion-infinite-scroll-content>
-              </ion-infinite-scroll>
-            </ion-content>
+            <ion-col slot="side">
+              <ion-card><h1>Trending</h1></ion-card>
+              <mynt-side-list ttle="Following"></mynt-side-list>
+              <mynt-side-list ttle="Wallet"></mynt-side-list>
+            </ion-col>
+            <ion-col slot="main">
+              <ion-content>
+                <ion-grid>
+                  {this.data.map(item =>
+                    <ion-item>{item}
+                    </ion-item>
+                  )}
+                </ion-grid>
+                <ion-infinite-scroll
+                  ref={el => this.infiniteScroll = el}
+                  onIonInfinite={(ev) => this.loadData(ev)}>
+                  <ion-infinite-scroll-content
+                    loadingSpinner="bubbles"
+                    loadingText="Loading more data...">
+                  </ion-infinite-scroll-content>
+                </ion-infinite-scroll>
+              </ion-content>
+            </ion-col>
         </mynt-page>
     );
   }

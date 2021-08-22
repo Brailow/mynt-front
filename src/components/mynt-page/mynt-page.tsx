@@ -12,14 +12,8 @@ export class MyntPage {
       <Host>
         <ion-grid>
         <ion-row>
-          <ion-col>
-            <ion-card><h1>Trending</h1></ion-card>
-            <mynt-side-list ttle="Following"></mynt-side-list>
-            <mynt-side-list ttle="Wallet"></mynt-side-list>
-          </ion-col>
-          <ion-col>
-            <slot></slot>
-          </ion-col>
+          <slot name="side"></slot>
+          <slot name="main"></slot>
         </ion-row>
       </ion-grid>
       </Host>

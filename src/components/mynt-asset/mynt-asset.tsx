@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'mynt-asset',
@@ -7,11 +7,13 @@ import { Component, Host, h } from '@stencil/core';
 })
 export class MyntAsset {
 
+  @Prop() cost
+
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <ion-card>
+
+      </ion-card>
     );
   }
 

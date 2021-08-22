@@ -16,6 +16,7 @@ export namespace Components {
     interface CreateCoin {
     }
     interface MyntAsset {
+        "cost": any;
     }
     interface MyntAssetPage {
     }
@@ -370,6 +371,7 @@ declare namespace LocalJSX {
     interface CreateCoin {
     }
     interface MyntAsset {
+        "cost"?: any;
     }
     interface MyntAssetPage {
     }

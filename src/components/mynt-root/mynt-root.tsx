@@ -13,6 +13,8 @@ export class MyntRoot {
           <ion-route component="mynt-menu">
             <ion-route url="/" component="mynts" />
             <ion-route url="/watch" component="watch" />
+            <ion-route url="/market" component="watch" />
+            <ion-route url="/assets" component="watch" />
           </ion-route>
         </ion-router>
         <ion-nav />

@@ -19,9 +19,9 @@ export class MyntMenu {
         </ion-tab>
         <ion-tab tab="watch" component="mynt-watch">
         </ion-tab>
-        <ion-tab tab="market">
+        <ion-tab tab="market" component="mynt-market">
         </ion-tab>
-        <ion-tab tab="assets">
+        <ion-tab tab="assets" component="mynt-assets">
         </ion-tab>
 
         <ion-tab-bar slot="top">
