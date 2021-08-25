@@ -32,6 +32,9 @@ export namespace Components {
     }
     interface MyntFeed {
     }
+    interface MyntGridRow {
+        "numCols": number;
+    }
     interface MyntListing {
     }
     interface MyntLogin {
@@ -163,6 +166,12 @@ declare global {
     var HTMLMyntFeedElement: {
         prototype: HTMLMyntFeedElement;
         new (): HTMLMyntFeedElement;
+    };
+    interface HTMLMyntGridRowElement extends Components.MyntGridRow, HTMLStencilElement {
+    }
+    var HTMLMyntGridRowElement: {
+        prototype: HTMLMyntGridRowElement;
+        new (): HTMLMyntGridRowElement;
     };
     interface HTMLMyntListingElement extends Components.MyntListing, HTMLStencilElement {
     }
@@ -332,6 +341,7 @@ declare global {
         "mynt-dm": HTMLMyntDmElement;
         "mynt-dms": HTMLMyntDmsElement;
         "mynt-feed": HTMLMyntFeedElement;
+        "mynt-grid-row": HTMLMyntGridRowElement;
         "mynt-listing": HTMLMyntListingElement;
         "mynt-login": HTMLMyntLoginElement;
         "mynt-logo": HTMLMyntLogoElement;
@@ -386,6 +396,9 @@ declare namespace LocalJSX {
     interface MyntDms {
     }
     interface MyntFeed {
+    }
+    interface MyntGridRow {
+        "numCols"?: number;
     }
     interface MyntListing {
     }
@@ -463,6 +476,7 @@ declare namespace LocalJSX {
         "mynt-dm": MyntDm;
         "mynt-dms": MyntDms;
         "mynt-feed": MyntFeed;
+        "mynt-grid-row": MyntGridRow;
         "mynt-listing": MyntListing;
         "mynt-login": MyntLogin;
         "mynt-logo": MyntLogo;
@@ -506,6 +520,7 @@ declare module "@stencil/core" {
             "mynt-dm": LocalJSX.MyntDm & JSXBase.HTMLAttributes<HTMLMyntDmElement>;
             "mynt-dms": LocalJSX.MyntDms & JSXBase.HTMLAttributes<HTMLMyntDmsElement>;
             "mynt-feed": LocalJSX.MyntFeed & JSXBase.HTMLAttributes<HTMLMyntFeedElement>;
+            "mynt-grid-row": LocalJSX.MyntGridRow & JSXBase.HTMLAttributes<HTMLMyntGridRowElement>;
             "mynt-listing": LocalJSX.MyntListing & JSXBase.HTMLAttributes<HTMLMyntListingElement>;
             "mynt-login": LocalJSX.MyntLogin & JSXBase.HTMLAttributes<HTMLMyntLoginElement>;
             "mynt-logo": LocalJSX.MyntLogo & JSXBase.HTMLAttributes<HTMLMyntLogoElement>;

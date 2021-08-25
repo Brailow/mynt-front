@@ -8,17 +8,19 @@ import { Component, h } from '@stencil/core';
 export class MyntLogin {
 
   render() {
-    const enableBackdropDismiss = true;
-    const showBackdrop = true;
-    const shouldPropagate = false;
 
     return [
-      // Backdrop that sets dynamic properties
-      <ion-backdrop
-        tappable={enableBackdropDismiss}
-        visible={showBackdrop}
-        stopPropagation={shouldPropagate}>
-      </ion-backdrop>
+      <ion-list>
+        <ion-item>
+          <ion-label>Documentation</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Feedback</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Settings</ion-label>
+        </ion-item>
+      </ion-list>
     ];
   }
 

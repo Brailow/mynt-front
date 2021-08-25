@@ -13,19 +13,6 @@ export class MyntMakePost {
   @State() sellAsset: boolean = false;
   @State() sendAsset: boolean = false;
   @State() markNSFW: boolean = false;
-  
-  async presentPopover(ev: any) {
-    const popover = await popoverController.create({
-      component: '../create-coin/create-coin.tsx',
-      cssClass: '../create-coin/create-coin.css',
-      event: ev,
-      translucent: true
-    });
-    await popover.present();
-
-    const { role } = await popover.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
-  }
 
   render() {
     return (
@@ -47,12 +34,11 @@ export class MyntMakePost {
           <ion-label>No files currently added to mynt</ion-label>
         </ion-item>
         <ion-item>
-          <ion-button onClick={(ev) => this.presentPopover(ev)}>Present Popover</ion-button>
-          <ion-toggle checked={this.createACoin} onChange={(ev) => this.presentPopover(ev)}></ion-toggle><ion-label>Create a Coin</ion-label>
-          <ion-toggle checked={this.viewRestrictions} onChange={(ev) => this.presentPopover(ev)}></ion-toggle><ion-label>Viewing Restrictions</ion-label>
-          <ion-toggle checked={this.sellAsset} onChange={(ev) => this.presentPopover(ev)}></ion-toggle><ion-label>Sell an Asset</ion-label>
-          <ion-toggle checked={this.sendAsset} onChange={(ev) => this.presentPopover(ev)}></ion-toggle><ion-label>Send an Asset</ion-label>
-          <ion-toggle checked={this.markNSFW} onChange={(ev) => this.presentPopover(ev)}></ion-toggle><ion-label>Mark as NSFW</ion-label>
+          <ion-toggle checked={this.createACoin}></ion-toggle><ion-label>Create a Coin</ion-label>
+          <ion-toggle checked={this.viewRestrictions}></ion-toggle><ion-label>Viewing Restrictions</ion-label>
+          <ion-toggle checked={this.sellAsset}></ion-toggle><ion-label>Sell an Asset</ion-label>
+          <ion-toggle checked={this.sendAsset}></ion-toggle><ion-label>Send an Asset</ion-label>
+          <ion-toggle checked={this.markNSFW}></ion-toggle><ion-label>Mark as NSFW</ion-label>
         </ion-item>
       </ion-card>
     );

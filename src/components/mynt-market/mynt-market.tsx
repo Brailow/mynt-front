@@ -21,7 +21,7 @@ export class MyntMarket {
     const min = max - 20;
 
     for (var i = min; i < max; i++) {
-      this.data.push(<mynt-post name="Logan Paul" user="@loganpaul" profPicSrc="https://pbs.twimg.com/profile_images/1401837042934468611/okzqIoMb_400x400.jpg" text={i.toString()} mediaPicSrc="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"></mynt-post>);
+      this.data.push(<mynt-grid-row numCols={4}></mynt-grid-row>);
     }
 
     // Stencil does not re-render when pushing to an array
@@ -45,6 +45,7 @@ export class MyntMarket {
       }
     }, 500);
   }
+  //need to change the div below
 
   render() {
     return (

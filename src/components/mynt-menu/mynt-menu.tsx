@@ -1,11 +1,25 @@
 import { Component, h } from '@stencil/core';
 
+import { popoverController } from '@ionic/core';
+
 @Component({
   tag: 'mynt-menu',
   styleUrl: 'mynt-menu.css',
   shadow: true,
 })
 export class MyntMenu {
+
+  async presentPopover(ev: any) {
+    const popover = await popoverController.create({
+      component: 'mynt-login',//////CHANGE
+      //cssClass: 'my-custom-class',//////CHANGE
+      translucent: true
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
 
   //ask Ben about loading and different URLs
   //should I integrate this with a router?
@@ -40,8 +54,8 @@ export class MyntMenu {
           <ion-tab-button tab="assets">
             <ion-label>Assets</ion-label>
           </ion-tab-button>
-          <ion-button>Create Account</ion-button>
-          <ion-button>Sign In</ion-button>
+          <ion-button >Create Account</ion-button>
+          <ion-button onClick={(ev) => this.presentPopover(ev)}>Sign In</ion-button>
         </ion-tab-bar>
       </ion-tabs>
     );
