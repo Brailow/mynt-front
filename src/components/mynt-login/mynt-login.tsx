@@ -10,17 +10,26 @@ export class MyntLogin {
   render() {
 
     return [
-      <ion-list>
-        <ion-item>
-          <ion-label>Documentation</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>Feedback</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>Settings</ion-label>
-        </ion-item>
-      </ion-list>
+    <ion-card>
+      <ion-item>
+        <mynt-logo></mynt-logo>
+        <ion-card-header>Log in to Mynt</ion-card-header>
+      </ion-item>
+      <ion-segment>
+        <ion-segment-button>
+          <ion-label>Login</ion-label>
+        </ion-segment-button>
+        <ion-segment-button>
+          <ion-label>Sign Up</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      <ion-input placeholder="username"></ion-input>
+      <ion-input placeholder="password"></ion-input>
+      <ion-item>
+        <ion-checkbox></ion-checkbox>
+        <ion-label>I agree to the Terms and Conditions</ion-label>
+      </ion-item>
+    </ion-card>
     ];
   }
 
