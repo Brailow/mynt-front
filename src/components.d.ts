@@ -38,6 +38,7 @@ export namespace Components {
     interface MyntListing {
     }
     interface MyntLogin {
+        "create_account": boolean;
     }
     interface MyntLogo {
     }
@@ -403,6 +404,7 @@ declare namespace LocalJSX {
     interface MyntListing {
     }
     interface MyntLogin {
+        "create_account"?: boolean;
     }
     interface MyntLogo {
     }
