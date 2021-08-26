@@ -9,9 +9,10 @@ import { popoverController } from '@ionic/core';
 })
 export class MyntMenu {
 
-  async presentPopover(ev: any) {
+  async presentPopover(ev: any, create_account_prop: boolean) {
     const popover = await popoverController.create({
-      component: 'mynt-login',//////CHANGE
+      component: 'mynt-login',
+      componentProps: {create_account: create_account_prop},
       //cssClass: 'my-custom-class',//////CHANGE
       translucent: true
     });
@@ -54,8 +55,8 @@ export class MyntMenu {
           <ion-tab-button tab="assets">
             <ion-label>Assets</ion-label>
           </ion-tab-button>
-          <ion-button >Create Account</ion-button>
-          <ion-button onClick={(ev) => this.presentPopover(ev)}>Sign In</ion-button>
+          <ion-button onClick={(ev) => this.presentPopover(ev, true)}>Create Account</ion-button>
+          <ion-button onClick={(ev) => this.presentPopover(ev, false)}>Sign In</ion-button>
         </ion-tab-bar>
       </ion-tabs>
     );
