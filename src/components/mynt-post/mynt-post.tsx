@@ -31,6 +31,13 @@ export class MyntPost {
             <ion-img src={this.mediaPicSrc}></ion-img>
           </ion-thumbnail>
         </ion-card-content>
+        <ion-item>
+          <ion-button slot="start"><ion-icon name="thumbs-up-outline"></ion-icon></ion-button>
+          <ion-button slot="start"><ion-icon name="chatbox-outline"></ion-icon></ion-button>
+          <ion-button slot="start"><ion-icon name="repeat-outline"></ion-icon></ion-button>
+          <ion-button slot="end">Tip</ion-button>
+          <ion-button slot="end">Buy Coin</ion-button>
+        </ion-item>
       </ion-card>
     );
   }
