@@ -24,6 +24,8 @@ export namespace Components {
     }
     interface MyntChat {
     }
+    interface MyntCommentSection {
+    }
     interface MyntDm {
         "name": string;
         "profImg": string;
@@ -149,6 +151,12 @@ declare global {
     var HTMLMyntChatElement: {
         prototype: HTMLMyntChatElement;
         new (): HTMLMyntChatElement;
+    };
+    interface HTMLMyntCommentSectionElement extends Components.MyntCommentSection, HTMLStencilElement {
+    }
+    var HTMLMyntCommentSectionElement: {
+        prototype: HTMLMyntCommentSectionElement;
+        new (): HTMLMyntCommentSectionElement;
     };
     interface HTMLMyntDmElement extends Components.MyntDm, HTMLStencilElement {
     }
@@ -339,6 +347,7 @@ declare global {
         "mynt-asset-page": HTMLMyntAssetPageElement;
         "mynt-assets": HTMLMyntAssetsElement;
         "mynt-chat": HTMLMyntChatElement;
+        "mynt-comment-section": HTMLMyntCommentSectionElement;
         "mynt-dm": HTMLMyntDmElement;
         "mynt-dms": HTMLMyntDmsElement;
         "mynt-feed": HTMLMyntFeedElement;
@@ -389,6 +398,8 @@ declare namespace LocalJSX {
     interface MyntAssets {
     }
     interface MyntChat {
+    }
+    interface MyntCommentSection {
     }
     interface MyntDm {
         "name"?: string;
@@ -475,6 +486,7 @@ declare namespace LocalJSX {
         "mynt-asset-page": MyntAssetPage;
         "mynt-assets": MyntAssets;
         "mynt-chat": MyntChat;
+        "mynt-comment-section": MyntCommentSection;
         "mynt-dm": MyntDm;
         "mynt-dms": MyntDms;
         "mynt-feed": MyntFeed;
@@ -519,6 +531,7 @@ declare module "@stencil/core" {
             "mynt-asset-page": LocalJSX.MyntAssetPage & JSXBase.HTMLAttributes<HTMLMyntAssetPageElement>;
             "mynt-assets": LocalJSX.MyntAssets & JSXBase.HTMLAttributes<HTMLMyntAssetsElement>;
             "mynt-chat": LocalJSX.MyntChat & JSXBase.HTMLAttributes<HTMLMyntChatElement>;
+            "mynt-comment-section": LocalJSX.MyntCommentSection & JSXBase.HTMLAttributes<HTMLMyntCommentSectionElement>;
             "mynt-dm": LocalJSX.MyntDm & JSXBase.HTMLAttributes<HTMLMyntDmElement>;
             "mynt-dms": LocalJSX.MyntDms & JSXBase.HTMLAttributes<HTMLMyntDmsElement>;
             "mynt-feed": LocalJSX.MyntFeed & JSXBase.HTMLAttributes<HTMLMyntFeedElement>;

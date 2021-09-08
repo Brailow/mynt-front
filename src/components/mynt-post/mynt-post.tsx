@@ -1,4 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
+import { popoverController } from '@ionic/core';
 
 @Component({
   tag: 'mynt-post',
@@ -12,6 +13,23 @@ export class MyntPost {
   @Prop() profPicSrc: string = "";
   @Prop() text= "";
   @Prop() mediaPicSrc: string = "";
+
+  //I don't think I will be able to use popover for comments because the customization capabilities won't be there until ionic v6
+  //I think a framework will be required for this.
+  //I'll just use this to look at the comments
+  async presentComments(ev: any) {
+    const popover = await popoverController.create({
+      component: 'mynt-comment-section',
+      //cssClass: 'my-custom-class',//////CHANGE
+      showBackdrop: false,
+      //event: ev,
+      translucent: true
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
 
   render() {
     return (
@@ -33,7 +51,7 @@ export class MyntPost {
         </ion-card-content>
         <ion-item>
           <ion-button slot="start"><ion-icon name="thumbs-up-outline"></ion-icon></ion-button>
-          <ion-button slot="start"><ion-icon name="chatbox-outline"></ion-icon></ion-button>
+          <ion-button slot="start" onClick={(ev) => this.presentComments(ev)}><ion-icon name="chatbox-outline"></ion-icon></ion-button>
           <ion-button slot="start"><ion-icon name="repeat-outline"></ion-icon></ion-button>
           <ion-button slot="end">Tip</ion-button>
           <ion-button slot="end">Buy Coin</ion-button>
