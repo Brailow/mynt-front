@@ -22,6 +22,30 @@ export class MyntMenu {
     console.log('onDidDismiss resolved with role', role);
   }
 
+  async presentDMs(ev: any) {
+    const popover = await popoverController.create({
+      component: 'mynt-dms',
+      //cssClass: 'my-custom-class',//////CHANGE
+      translucent: true
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
+
+  async presentNotis(ev: any) {
+    const popover = await popoverController.create({
+      component: 'mynt-notifications',
+      //cssClass: 'my-custom-class',//////CHANGE
+      translucent: true
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
+
   //ask Ben about loading and different URLs
   //should I integrate this with a router?
   //should I put an ion-nav in each tab here?
@@ -55,6 +79,8 @@ export class MyntMenu {
           <ion-tab-button tab="assets">
             <ion-label>Assets</ion-label>
           </ion-tab-button>
+          <ion-button shape="round" onClick={(ev) => this.presentNotis(ev)}><ion-icon name="notifications-outline"></ion-icon></ion-button>
+          <ion-button shape="round" onClick={(ev) => this.presentDMs(ev)}><ion-icon name="chatbubbles-outline"></ion-icon></ion-button>
           <ion-button onClick={(ev) => this.presentSignin(ev, true)}>Create Account</ion-button>
           <ion-button onClick={(ev) => this.presentSignin(ev, false)}>Sign In</ion-button>
         </ion-tab-bar>

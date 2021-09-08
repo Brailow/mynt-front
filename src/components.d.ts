@@ -30,6 +30,10 @@ export namespace Components {
         "name": string;
         "profImg": string;
     }
+    interface MyntDmButton {
+    }
+    interface MyntDmNotiButton {
+    }
     interface MyntDms {
     }
     interface MyntFeed {
@@ -51,6 +55,11 @@ export namespace Components {
     interface MyntMenu {
     }
     interface MyntMessage {
+    }
+    interface MyntNoti {
+        "assImg": string;
+        "ttle": string;
+        "txt": string;
     }
     interface MyntNotifications {
     }
@@ -164,6 +173,18 @@ declare global {
         prototype: HTMLMyntDmElement;
         new (): HTMLMyntDmElement;
     };
+    interface HTMLMyntDmButtonElement extends Components.MyntDmButton, HTMLStencilElement {
+    }
+    var HTMLMyntDmButtonElement: {
+        prototype: HTMLMyntDmButtonElement;
+        new (): HTMLMyntDmButtonElement;
+    };
+    interface HTMLMyntDmNotiButtonElement extends Components.MyntDmNotiButton, HTMLStencilElement {
+    }
+    var HTMLMyntDmNotiButtonElement: {
+        prototype: HTMLMyntDmNotiButtonElement;
+        new (): HTMLMyntDmNotiButtonElement;
+    };
     interface HTMLMyntDmsElement extends Components.MyntDms, HTMLStencilElement {
     }
     var HTMLMyntDmsElement: {
@@ -223,6 +244,12 @@ declare global {
     var HTMLMyntMessageElement: {
         prototype: HTMLMyntMessageElement;
         new (): HTMLMyntMessageElement;
+    };
+    interface HTMLMyntNotiElement extends Components.MyntNoti, HTMLStencilElement {
+    }
+    var HTMLMyntNotiElement: {
+        prototype: HTMLMyntNotiElement;
+        new (): HTMLMyntNotiElement;
     };
     interface HTMLMyntNotificationsElement extends Components.MyntNotifications, HTMLStencilElement {
     }
@@ -349,6 +376,8 @@ declare global {
         "mynt-chat": HTMLMyntChatElement;
         "mynt-comment-section": HTMLMyntCommentSectionElement;
         "mynt-dm": HTMLMyntDmElement;
+        "mynt-dm-button": HTMLMyntDmButtonElement;
+        "mynt-dm-noti-button": HTMLMyntDmNotiButtonElement;
         "mynt-dms": HTMLMyntDmsElement;
         "mynt-feed": HTMLMyntFeedElement;
         "mynt-grid-row": HTMLMyntGridRowElement;
@@ -359,6 +388,7 @@ declare global {
         "mynt-market": HTMLMyntMarketElement;
         "mynt-menu": HTMLMyntMenuElement;
         "mynt-message": HTMLMyntMessageElement;
+        "mynt-noti": HTMLMyntNotiElement;
         "mynt-notifications": HTMLMyntNotificationsElement;
         "mynt-page": HTMLMyntPageElement;
         "mynt-page-menu": HTMLMyntPageMenuElement;
@@ -405,6 +435,10 @@ declare namespace LocalJSX {
         "name"?: string;
         "profImg"?: string;
     }
+    interface MyntDmButton {
+    }
+    interface MyntDmNotiButton {
+    }
     interface MyntDms {
     }
     interface MyntFeed {
@@ -426,6 +460,11 @@ declare namespace LocalJSX {
     interface MyntMenu {
     }
     interface MyntMessage {
+    }
+    interface MyntNoti {
+        "assImg"?: string;
+        "ttle"?: string;
+        "txt"?: string;
     }
     interface MyntNotifications {
     }
@@ -488,6 +527,8 @@ declare namespace LocalJSX {
         "mynt-chat": MyntChat;
         "mynt-comment-section": MyntCommentSection;
         "mynt-dm": MyntDm;
+        "mynt-dm-button": MyntDmButton;
+        "mynt-dm-noti-button": MyntDmNotiButton;
         "mynt-dms": MyntDms;
         "mynt-feed": MyntFeed;
         "mynt-grid-row": MyntGridRow;
@@ -498,6 +539,7 @@ declare namespace LocalJSX {
         "mynt-market": MyntMarket;
         "mynt-menu": MyntMenu;
         "mynt-message": MyntMessage;
+        "mynt-noti": MyntNoti;
         "mynt-notifications": MyntNotifications;
         "mynt-page": MyntPage;
         "mynt-page-menu": MyntPageMenu;
@@ -533,6 +575,8 @@ declare module "@stencil/core" {
             "mynt-chat": LocalJSX.MyntChat & JSXBase.HTMLAttributes<HTMLMyntChatElement>;
             "mynt-comment-section": LocalJSX.MyntCommentSection & JSXBase.HTMLAttributes<HTMLMyntCommentSectionElement>;
             "mynt-dm": LocalJSX.MyntDm & JSXBase.HTMLAttributes<HTMLMyntDmElement>;
+            "mynt-dm-button": LocalJSX.MyntDmButton & JSXBase.HTMLAttributes<HTMLMyntDmButtonElement>;
+            "mynt-dm-noti-button": LocalJSX.MyntDmNotiButton & JSXBase.HTMLAttributes<HTMLMyntDmNotiButtonElement>;
             "mynt-dms": LocalJSX.MyntDms & JSXBase.HTMLAttributes<HTMLMyntDmsElement>;
             "mynt-feed": LocalJSX.MyntFeed & JSXBase.HTMLAttributes<HTMLMyntFeedElement>;
             "mynt-grid-row": LocalJSX.MyntGridRow & JSXBase.HTMLAttributes<HTMLMyntGridRowElement>;
@@ -543,6 +587,7 @@ declare module "@stencil/core" {
             "mynt-market": LocalJSX.MyntMarket & JSXBase.HTMLAttributes<HTMLMyntMarketElement>;
             "mynt-menu": LocalJSX.MyntMenu & JSXBase.HTMLAttributes<HTMLMyntMenuElement>;
             "mynt-message": LocalJSX.MyntMessage & JSXBase.HTMLAttributes<HTMLMyntMessageElement>;
+            "mynt-noti": LocalJSX.MyntNoti & JSXBase.HTMLAttributes<HTMLMyntNotiElement>;
             "mynt-notifications": LocalJSX.MyntNotifications & JSXBase.HTMLAttributes<HTMLMyntNotificationsElement>;
             "mynt-page": LocalJSX.MyntPage & JSXBase.HTMLAttributes<HTMLMyntPageElement>;
             "mynt-page-menu": LocalJSX.MyntPageMenu & JSXBase.HTMLAttributes<HTMLMyntPageMenuElement>;
