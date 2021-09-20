@@ -23,6 +23,7 @@ export namespace Components {
     interface MyntAssets {
     }
     interface MyntChat {
+        "name": string;
     }
     interface MyntCommentSection {
     }
@@ -35,6 +36,7 @@ export namespace Components {
     interface MyntDmNotiButton {
     }
     interface MyntDms {
+        "data": any[];
     }
     interface MyntFeed {
     }
@@ -55,6 +57,9 @@ export namespace Components {
     interface MyntMenu {
     }
     interface MyntMessage {
+        "msg": string;
+        "sent": boolean;
+        "timestamp": string;
     }
     interface MyntNoti {
         "assImg": string;
@@ -428,6 +433,7 @@ declare namespace LocalJSX {
     interface MyntAssets {
     }
     interface MyntChat {
+        "name"?: string;
     }
     interface MyntCommentSection {
     }
@@ -440,6 +446,7 @@ declare namespace LocalJSX {
     interface MyntDmNotiButton {
     }
     interface MyntDms {
+        "data"?: any[];
     }
     interface MyntFeed {
     }
@@ -460,6 +467,9 @@ declare namespace LocalJSX {
     interface MyntMenu {
     }
     interface MyntMessage {
+        "msg"?: string;
+        "sent"?: boolean;
+        "timestamp"?: string;
     }
     interface MyntNoti {
         "assImg"?: string;

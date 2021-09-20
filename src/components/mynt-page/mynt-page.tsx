@@ -11,11 +11,11 @@ export class MyntPage {
     return (
       <Host>
         <ion-grid>
-        <ion-row>
-          <slot name="side"></slot>
-          <slot name="main"></slot>
-        </ion-row>
-      </ion-grid>
+          <ion-row>
+            <slot name="side"></slot>
+            <slot name="main"></slot>
+          </ion-row>
+        </ion-grid>
       </Host>
     );
   }

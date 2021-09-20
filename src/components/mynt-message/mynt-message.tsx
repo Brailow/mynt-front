@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'mynt-message',
@@ -6,12 +6,13 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class MyntMessage {
+  @Prop() msg: string = "";
+  @Prop({mutable: true}) sent: boolean = true;
+  @Prop({mutable: true}) timestamp: string = "1970/01/01";
 
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <ion-item><ion-label slot={this.sent ? "end": "start"}>{this.msg}</ion-label></ion-item>
     );
   }
 
