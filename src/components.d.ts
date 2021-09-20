@@ -13,8 +13,6 @@ export namespace Components {
     }
     interface AppRoot {
     }
-    interface CreateCoin {
-    }
     interface MyntAsset {
         "cost": any;
     }
@@ -26,6 +24,8 @@ export namespace Components {
         "name": string;
     }
     interface MyntCommentSection {
+    }
+    interface MyntCreateCoin {
     }
     interface MyntDm {
         "name": string;
@@ -136,12 +136,6 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
-    interface HTMLCreateCoinElement extends Components.CreateCoin, HTMLStencilElement {
-    }
-    var HTMLCreateCoinElement: {
-        prototype: HTMLCreateCoinElement;
-        new (): HTMLCreateCoinElement;
-    };
     interface HTMLMyntAssetElement extends Components.MyntAsset, HTMLStencilElement {
     }
     var HTMLMyntAssetElement: {
@@ -171,6 +165,12 @@ declare global {
     var HTMLMyntCommentSectionElement: {
         prototype: HTMLMyntCommentSectionElement;
         new (): HTMLMyntCommentSectionElement;
+    };
+    interface HTMLMyntCreateCoinElement extends Components.MyntCreateCoin, HTMLStencilElement {
+    }
+    var HTMLMyntCreateCoinElement: {
+        prototype: HTMLMyntCreateCoinElement;
+        new (): HTMLMyntCreateCoinElement;
     };
     interface HTMLMyntDmElement extends Components.MyntDm, HTMLStencilElement {
     }
@@ -374,12 +374,12 @@ declare global {
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
-        "create-coin": HTMLCreateCoinElement;
         "mynt-asset": HTMLMyntAssetElement;
         "mynt-asset-page": HTMLMyntAssetPageElement;
         "mynt-assets": HTMLMyntAssetsElement;
         "mynt-chat": HTMLMyntChatElement;
         "mynt-comment-section": HTMLMyntCommentSectionElement;
+        "mynt-create-coin": HTMLMyntCreateCoinElement;
         "mynt-dm": HTMLMyntDmElement;
         "mynt-dm-button": HTMLMyntDmButtonElement;
         "mynt-dm-noti-button": HTMLMyntDmNotiButtonElement;
@@ -423,8 +423,6 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
-    interface CreateCoin {
-    }
     interface MyntAsset {
         "cost"?: any;
     }
@@ -436,6 +434,8 @@ declare namespace LocalJSX {
         "name"?: string;
     }
     interface MyntCommentSection {
+    }
+    interface MyntCreateCoin {
     }
     interface MyntDm {
         "name"?: string;
@@ -530,12 +530,12 @@ declare namespace LocalJSX {
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
-        "create-coin": CreateCoin;
         "mynt-asset": MyntAsset;
         "mynt-asset-page": MyntAssetPage;
         "mynt-assets": MyntAssets;
         "mynt-chat": MyntChat;
         "mynt-comment-section": MyntCommentSection;
+        "mynt-create-coin": MyntCreateCoin;
         "mynt-dm": MyntDm;
         "mynt-dm-button": MyntDmButton;
         "mynt-dm-noti-button": MyntDmNotiButton;
@@ -578,12 +578,12 @@ declare module "@stencil/core" {
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
-            "create-coin": LocalJSX.CreateCoin & JSXBase.HTMLAttributes<HTMLCreateCoinElement>;
             "mynt-asset": LocalJSX.MyntAsset & JSXBase.HTMLAttributes<HTMLMyntAssetElement>;
             "mynt-asset-page": LocalJSX.MyntAssetPage & JSXBase.HTMLAttributes<HTMLMyntAssetPageElement>;
             "mynt-assets": LocalJSX.MyntAssets & JSXBase.HTMLAttributes<HTMLMyntAssetsElement>;
             "mynt-chat": LocalJSX.MyntChat & JSXBase.HTMLAttributes<HTMLMyntChatElement>;
             "mynt-comment-section": LocalJSX.MyntCommentSection & JSXBase.HTMLAttributes<HTMLMyntCommentSectionElement>;
+            "mynt-create-coin": LocalJSX.MyntCreateCoin & JSXBase.HTMLAttributes<HTMLMyntCreateCoinElement>;
             "mynt-dm": LocalJSX.MyntDm & JSXBase.HTMLAttributes<HTMLMyntDmElement>;
             "mynt-dm-button": LocalJSX.MyntDmButton & JSXBase.HTMLAttributes<HTMLMyntDmButtonElement>;
             "mynt-dm-noti-button": LocalJSX.MyntDmNotiButton & JSXBase.HTMLAttributes<HTMLMyntDmNotiButtonElement>;

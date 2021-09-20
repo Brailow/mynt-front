@@ -14,7 +14,29 @@ export class MyntMakePost {
   @State() sendAsset: boolean = false;
   @State() markNSFW: boolean = false;
 
+  async toggleController() {
+    if (this.createACoin) {
+      this.presentCreateCoin();
+    }
+  }
+
+  async presentCreateCoin() {
+    const popover = await popoverController.create({
+      component: 'mynt-create-coin',
+      //cssClass: 'my-custom-class',//////CHANGE
+      translucent: true
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    this.createACoin = false;
+    console.log('onDidDismiss resolved with role', role);
+  }
+
   render() {
+
+    this.toggleController();
+
     return (
       <ion-card>
         <ion-item>
@@ -34,7 +56,7 @@ export class MyntMakePost {
           <ion-label>No files currently added to mynt</ion-label>
         </ion-item>
         <ion-item>
-          <ion-toggle checked={this.createACoin}></ion-toggle><ion-label>Create a Coin</ion-label>
+          <ion-toggle checked={this.createACoin} onIonChange={(ev) => this.createACoin = ev.detail.checked}></ion-toggle><ion-label>Create a Coin</ion-label>
           <ion-toggle checked={this.viewRestrictions}></ion-toggle><ion-label>Viewing Restrictions</ion-label>
           <ion-toggle checked={this.sellAsset}></ion-toggle><ion-label>Sell an Asset</ion-label>
           <ion-toggle checked={this.sendAsset}></ion-toggle><ion-label>Send an Asset</ion-label>

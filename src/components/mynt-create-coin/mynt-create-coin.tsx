@@ -1,12 +1,11 @@
-import { Component, h } from '@stencil/core';
-
+import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'create-coin',
-  styleUrl: 'create-coin.css',
+  tag: 'mynt-create-coin',
+  styleUrl: 'mynt-create-coin.css',
   shadow: true,
 })
-export class CreateCoin {
+export class MyntCreateCoin {
 
   render() {
     return (

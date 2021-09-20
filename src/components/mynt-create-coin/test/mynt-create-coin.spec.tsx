@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { CreateCoin } from '../create-coin';
+import { MyntCreateCoin } from '../mynt-create-coin';
 
-describe('create-coin', () => {
+describe('mynt-create-coin', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [CreateCoin],
-      html: `<create-coin></create-coin>`,
+      components: [MyntCreateCoin],
+      html: `<mynt-create-coin></mynt-create-coin>`,
     });
     expect(page.root).toEqualHtml(`
-      <create-coin>
+      <mynt-create-coin>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </create-coin>
+      </mynt-create-coin>
     `);
   });
 });
