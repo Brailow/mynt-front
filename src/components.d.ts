@@ -83,6 +83,12 @@ export namespace Components {
     }
     interface MyntRoot {
     }
+    interface MyntSellAsset {
+    }
+    interface MyntSellAssetItem {
+    }
+    interface MyntSendAsset {
+    }
     interface MyntSettings {
     }
     interface MyntSideList {
@@ -99,6 +105,8 @@ export namespace Components {
     interface MyntStory {
     }
     interface MyntTradeModule {
+    }
+    interface MyntViewingRestrictions {
     }
     interface MyntWallet {
     }
@@ -292,6 +300,24 @@ declare global {
         prototype: HTMLMyntRootElement;
         new (): HTMLMyntRootElement;
     };
+    interface HTMLMyntSellAssetElement extends Components.MyntSellAsset, HTMLStencilElement {
+    }
+    var HTMLMyntSellAssetElement: {
+        prototype: HTMLMyntSellAssetElement;
+        new (): HTMLMyntSellAssetElement;
+    };
+    interface HTMLMyntSellAssetItemElement extends Components.MyntSellAssetItem, HTMLStencilElement {
+    }
+    var HTMLMyntSellAssetItemElement: {
+        prototype: HTMLMyntSellAssetItemElement;
+        new (): HTMLMyntSellAssetItemElement;
+    };
+    interface HTMLMyntSendAssetElement extends Components.MyntSendAsset, HTMLStencilElement {
+    }
+    var HTMLMyntSendAssetElement: {
+        prototype: HTMLMyntSendAssetElement;
+        new (): HTMLMyntSendAssetElement;
+    };
     interface HTMLMyntSettingsElement extends Components.MyntSettings, HTMLStencilElement {
     }
     var HTMLMyntSettingsElement: {
@@ -333,6 +359,12 @@ declare global {
     var HTMLMyntTradeModuleElement: {
         prototype: HTMLMyntTradeModuleElement;
         new (): HTMLMyntTradeModuleElement;
+    };
+    interface HTMLMyntViewingRestrictionsElement extends Components.MyntViewingRestrictions, HTMLStencilElement {
+    }
+    var HTMLMyntViewingRestrictionsElement: {
+        prototype: HTMLMyntViewingRestrictionsElement;
+        new (): HTMLMyntViewingRestrictionsElement;
     };
     interface HTMLMyntWalletElement extends Components.MyntWallet, HTMLStencilElement {
     }
@@ -400,6 +432,9 @@ declare global {
         "mynt-post": HTMLMyntPostElement;
         "mynt-profile-header": HTMLMyntProfileHeaderElement;
         "mynt-root": HTMLMyntRootElement;
+        "mynt-sell-asset": HTMLMyntSellAssetElement;
+        "mynt-sell-asset-item": HTMLMyntSellAssetItemElement;
+        "mynt-send-asset": HTMLMyntSendAssetElement;
         "mynt-settings": HTMLMyntSettingsElement;
         "mynt-side-list": HTMLMyntSideListElement;
         "mynt-side-listing": HTMLMyntSideListingElement;
@@ -407,6 +442,7 @@ declare global {
         "mynt-stories": HTMLMyntStoriesElement;
         "mynt-story": HTMLMyntStoryElement;
         "mynt-trade-module": HTMLMyntTradeModuleElement;
+        "mynt-viewing-restrictions": HTMLMyntViewingRestrictionsElement;
         "mynt-wallet": HTMLMyntWalletElement;
         "mynt-watch": HTMLMyntWatchElement;
         "mynt-watch-row": HTMLMyntWatchRowElement;
@@ -493,6 +529,12 @@ declare namespace LocalJSX {
     }
     interface MyntRoot {
     }
+    interface MyntSellAsset {
+    }
+    interface MyntSellAssetItem {
+    }
+    interface MyntSendAsset {
+    }
     interface MyntSettings {
     }
     interface MyntSideList {
@@ -509,6 +551,8 @@ declare namespace LocalJSX {
     interface MyntStory {
     }
     interface MyntTradeModule {
+    }
+    interface MyntViewingRestrictions {
     }
     interface MyntWallet {
     }
@@ -556,6 +600,9 @@ declare namespace LocalJSX {
         "mynt-post": MyntPost;
         "mynt-profile-header": MyntProfileHeader;
         "mynt-root": MyntRoot;
+        "mynt-sell-asset": MyntSellAsset;
+        "mynt-sell-asset-item": MyntSellAssetItem;
+        "mynt-send-asset": MyntSendAsset;
         "mynt-settings": MyntSettings;
         "mynt-side-list": MyntSideList;
         "mynt-side-listing": MyntSideListing;
@@ -563,6 +610,7 @@ declare namespace LocalJSX {
         "mynt-stories": MyntStories;
         "mynt-story": MyntStory;
         "mynt-trade-module": MyntTradeModule;
+        "mynt-viewing-restrictions": MyntViewingRestrictions;
         "mynt-wallet": MyntWallet;
         "mynt-watch": MyntWatch;
         "mynt-watch-row": MyntWatchRow;
@@ -604,6 +652,9 @@ declare module "@stencil/core" {
             "mynt-post": LocalJSX.MyntPost & JSXBase.HTMLAttributes<HTMLMyntPostElement>;
             "mynt-profile-header": LocalJSX.MyntProfileHeader & JSXBase.HTMLAttributes<HTMLMyntProfileHeaderElement>;
             "mynt-root": LocalJSX.MyntRoot & JSXBase.HTMLAttributes<HTMLMyntRootElement>;
+            "mynt-sell-asset": LocalJSX.MyntSellAsset & JSXBase.HTMLAttributes<HTMLMyntSellAssetElement>;
+            "mynt-sell-asset-item": LocalJSX.MyntSellAssetItem & JSXBase.HTMLAttributes<HTMLMyntSellAssetItemElement>;
+            "mynt-send-asset": LocalJSX.MyntSendAsset & JSXBase.HTMLAttributes<HTMLMyntSendAssetElement>;
             "mynt-settings": LocalJSX.MyntSettings & JSXBase.HTMLAttributes<HTMLMyntSettingsElement>;
             "mynt-side-list": LocalJSX.MyntSideList & JSXBase.HTMLAttributes<HTMLMyntSideListElement>;
             "mynt-side-listing": LocalJSX.MyntSideListing & JSXBase.HTMLAttributes<HTMLMyntSideListingElement>;
@@ -611,6 +662,7 @@ declare module "@stencil/core" {
             "mynt-stories": LocalJSX.MyntStories & JSXBase.HTMLAttributes<HTMLMyntStoriesElement>;
             "mynt-story": LocalJSX.MyntStory & JSXBase.HTMLAttributes<HTMLMyntStoryElement>;
             "mynt-trade-module": LocalJSX.MyntTradeModule & JSXBase.HTMLAttributes<HTMLMyntTradeModuleElement>;
+            "mynt-viewing-restrictions": LocalJSX.MyntViewingRestrictions & JSXBase.HTMLAttributes<HTMLMyntViewingRestrictionsElement>;
             "mynt-wallet": LocalJSX.MyntWallet & JSXBase.HTMLAttributes<HTMLMyntWalletElement>;
             "mynt-watch": LocalJSX.MyntWatch & JSXBase.HTMLAttributes<HTMLMyntWatchElement>;
             "mynt-watch-row": LocalJSX.MyntWatchRow & JSXBase.HTMLAttributes<HTMLMyntWatchRowElement>;

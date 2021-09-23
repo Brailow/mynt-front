@@ -17,6 +17,12 @@ export class MyntMakePost {
   async toggleController() {
     if (this.createACoin) {
       this.presentCreateCoin();
+    } else if (this.viewRestrictions) {
+      this.presentViewingRestrictions();
+    } else if (this.sellAsset) {
+      this.presentSellAsset();
+    } else if (this.sendAsset) {
+      this.presentSendAsset();
     }
   }
 
@@ -30,6 +36,45 @@ export class MyntMakePost {
 
     const { role } = await popover.onDidDismiss();
     this.createACoin = false;
+    console.log('onDidDismiss resolved with role', role);
+  }
+
+  async presentViewingRestrictions() {
+    const popover = await popoverController.create({
+      component: 'mynt-viewing-restrictions',
+      //cssClass: 'my-custom-class',//////CHANGE
+      translucent: true
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    this.viewRestrictions = false;
+    console.log('onDidDismiss resolved with role', role);
+  }
+
+  async presentSellAsset() {
+    const popover = await popoverController.create({
+      component: 'mynt-sell-asset',
+      //cssClass: 'my-custom-class',//////CHANGE
+      translucent: true
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    this.sellAsset = false;
+    console.log('onDidDismiss resolved with role', role);
+  }
+
+  async presentSendAsset() {
+    const popover = await popoverController.create({
+      component: 'mynt-send-asset',
+      //cssClass: 'my-custom-class',//////CHANGE
+      translucent: true
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    this.sendAsset = false;
     console.log('onDidDismiss resolved with role', role);
   }
 
@@ -57,9 +102,9 @@ export class MyntMakePost {
         </ion-item>
         <ion-item>
           <ion-toggle checked={this.createACoin} onIonChange={(ev) => this.createACoin = ev.detail.checked}></ion-toggle><ion-label>Create a Coin</ion-label>
-          <ion-toggle checked={this.viewRestrictions}></ion-toggle><ion-label>Viewing Restrictions</ion-label>
-          <ion-toggle checked={this.sellAsset}></ion-toggle><ion-label>Sell an Asset</ion-label>
-          <ion-toggle checked={this.sendAsset}></ion-toggle><ion-label>Send an Asset</ion-label>
+          <ion-toggle checked={this.viewRestrictions} onIonChange={(ev) => this.viewRestrictions = ev.detail.checked}></ion-toggle><ion-label>Viewing Restrictions</ion-label>
+          <ion-toggle checked={this.sellAsset} onIonChange={(ev) => this.sellAsset = ev.detail.checked}></ion-toggle><ion-label>Sell an Asset</ion-label>
+          <ion-toggle checked={this.sendAsset} onIonChange={(ev) => this.sendAsset = ev.detail.checked}></ion-toggle><ion-label>Send an Asset</ion-label>
           <ion-toggle checked={this.markNSFW}></ion-toggle><ion-label>Mark as NSFW</ion-label>
         </ion-item>
       </ion-card>
