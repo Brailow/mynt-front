@@ -9,11 +9,9 @@ export class MyntSellAsset {
 
   render() {
     return (
-      <ion-card>
-        <ion-list>
-          <mynt-sell-asset-item></mynt-sell-asset-item>
-        </ion-list>
-      </ion-card>
+      <mynt-viewing-restrictions>
+        
+      </mynt-viewing-restrictions>
     );
   }
 

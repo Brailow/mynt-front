@@ -16,6 +16,8 @@ export namespace Components {
     interface MyntAsset {
         "cost": any;
     }
+    interface MyntAssetItem {
+    }
     interface MyntAssetPage {
     }
     interface MyntAssets {
@@ -52,6 +54,10 @@ export namespace Components {
     }
     interface MyntMakePost {
     }
+    interface MyntMakePostDropdown {
+    }
+    interface MyntMarkNsfw {
+    }
     interface MyntMarket {
     }
     interface MyntMenu {
@@ -84,8 +90,6 @@ export namespace Components {
     interface MyntRoot {
     }
     interface MyntSellAsset {
-    }
-    interface MyntSellAssetItem {
     }
     interface MyntSendAsset {
     }
@@ -149,6 +153,12 @@ declare global {
     var HTMLMyntAssetElement: {
         prototype: HTMLMyntAssetElement;
         new (): HTMLMyntAssetElement;
+    };
+    interface HTMLMyntAssetItemElement extends Components.MyntAssetItem, HTMLStencilElement {
+    }
+    var HTMLMyntAssetItemElement: {
+        prototype: HTMLMyntAssetItemElement;
+        new (): HTMLMyntAssetItemElement;
     };
     interface HTMLMyntAssetPageElement extends Components.MyntAssetPage, HTMLStencilElement {
     }
@@ -240,6 +250,18 @@ declare global {
         prototype: HTMLMyntMakePostElement;
         new (): HTMLMyntMakePostElement;
     };
+    interface HTMLMyntMakePostDropdownElement extends Components.MyntMakePostDropdown, HTMLStencilElement {
+    }
+    var HTMLMyntMakePostDropdownElement: {
+        prototype: HTMLMyntMakePostDropdownElement;
+        new (): HTMLMyntMakePostDropdownElement;
+    };
+    interface HTMLMyntMarkNsfwElement extends Components.MyntMarkNsfw, HTMLStencilElement {
+    }
+    var HTMLMyntMarkNsfwElement: {
+        prototype: HTMLMyntMarkNsfwElement;
+        new (): HTMLMyntMarkNsfwElement;
+    };
     interface HTMLMyntMarketElement extends Components.MyntMarket, HTMLStencilElement {
     }
     var HTMLMyntMarketElement: {
@@ -305,12 +327,6 @@ declare global {
     var HTMLMyntSellAssetElement: {
         prototype: HTMLMyntSellAssetElement;
         new (): HTMLMyntSellAssetElement;
-    };
-    interface HTMLMyntSellAssetItemElement extends Components.MyntSellAssetItem, HTMLStencilElement {
-    }
-    var HTMLMyntSellAssetItemElement: {
-        prototype: HTMLMyntSellAssetItemElement;
-        new (): HTMLMyntSellAssetItemElement;
     };
     interface HTMLMyntSendAssetElement extends Components.MyntSendAsset, HTMLStencilElement {
     }
@@ -407,6 +423,7 @@ declare global {
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
         "mynt-asset": HTMLMyntAssetElement;
+        "mynt-asset-item": HTMLMyntAssetItemElement;
         "mynt-asset-page": HTMLMyntAssetPageElement;
         "mynt-assets": HTMLMyntAssetsElement;
         "mynt-chat": HTMLMyntChatElement;
@@ -422,6 +439,8 @@ declare global {
         "mynt-login": HTMLMyntLoginElement;
         "mynt-logo": HTMLMyntLogoElement;
         "mynt-make-post": HTMLMyntMakePostElement;
+        "mynt-make-post-dropdown": HTMLMyntMakePostDropdownElement;
+        "mynt-mark-nsfw": HTMLMyntMarkNsfwElement;
         "mynt-market": HTMLMyntMarketElement;
         "mynt-menu": HTMLMyntMenuElement;
         "mynt-message": HTMLMyntMessageElement;
@@ -433,7 +452,6 @@ declare global {
         "mynt-profile-header": HTMLMyntProfileHeaderElement;
         "mynt-root": HTMLMyntRootElement;
         "mynt-sell-asset": HTMLMyntSellAssetElement;
-        "mynt-sell-asset-item": HTMLMyntSellAssetItemElement;
         "mynt-send-asset": HTMLMyntSendAssetElement;
         "mynt-settings": HTMLMyntSettingsElement;
         "mynt-side-list": HTMLMyntSideListElement;
@@ -461,6 +479,8 @@ declare namespace LocalJSX {
     }
     interface MyntAsset {
         "cost"?: any;
+    }
+    interface MyntAssetItem {
     }
     interface MyntAssetPage {
     }
@@ -498,6 +518,10 @@ declare namespace LocalJSX {
     }
     interface MyntMakePost {
     }
+    interface MyntMakePostDropdown {
+    }
+    interface MyntMarkNsfw {
+    }
     interface MyntMarket {
     }
     interface MyntMenu {
@@ -530,8 +554,6 @@ declare namespace LocalJSX {
     interface MyntRoot {
     }
     interface MyntSellAsset {
-    }
-    interface MyntSellAssetItem {
     }
     interface MyntSendAsset {
     }
@@ -575,6 +597,7 @@ declare namespace LocalJSX {
         "app-profile": AppProfile;
         "app-root": AppRoot;
         "mynt-asset": MyntAsset;
+        "mynt-asset-item": MyntAssetItem;
         "mynt-asset-page": MyntAssetPage;
         "mynt-assets": MyntAssets;
         "mynt-chat": MyntChat;
@@ -590,6 +613,8 @@ declare namespace LocalJSX {
         "mynt-login": MyntLogin;
         "mynt-logo": MyntLogo;
         "mynt-make-post": MyntMakePost;
+        "mynt-make-post-dropdown": MyntMakePostDropdown;
+        "mynt-mark-nsfw": MyntMarkNsfw;
         "mynt-market": MyntMarket;
         "mynt-menu": MyntMenu;
         "mynt-message": MyntMessage;
@@ -601,7 +626,6 @@ declare namespace LocalJSX {
         "mynt-profile-header": MyntProfileHeader;
         "mynt-root": MyntRoot;
         "mynt-sell-asset": MyntSellAsset;
-        "mynt-sell-asset-item": MyntSellAssetItem;
         "mynt-send-asset": MyntSendAsset;
         "mynt-settings": MyntSettings;
         "mynt-side-list": MyntSideList;
@@ -627,6 +651,7 @@ declare module "@stencil/core" {
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "mynt-asset": LocalJSX.MyntAsset & JSXBase.HTMLAttributes<HTMLMyntAssetElement>;
+            "mynt-asset-item": LocalJSX.MyntAssetItem & JSXBase.HTMLAttributes<HTMLMyntAssetItemElement>;
             "mynt-asset-page": LocalJSX.MyntAssetPage & JSXBase.HTMLAttributes<HTMLMyntAssetPageElement>;
             "mynt-assets": LocalJSX.MyntAssets & JSXBase.HTMLAttributes<HTMLMyntAssetsElement>;
             "mynt-chat": LocalJSX.MyntChat & JSXBase.HTMLAttributes<HTMLMyntChatElement>;
@@ -642,6 +667,8 @@ declare module "@stencil/core" {
             "mynt-login": LocalJSX.MyntLogin & JSXBase.HTMLAttributes<HTMLMyntLoginElement>;
             "mynt-logo": LocalJSX.MyntLogo & JSXBase.HTMLAttributes<HTMLMyntLogoElement>;
             "mynt-make-post": LocalJSX.MyntMakePost & JSXBase.HTMLAttributes<HTMLMyntMakePostElement>;
+            "mynt-make-post-dropdown": LocalJSX.MyntMakePostDropdown & JSXBase.HTMLAttributes<HTMLMyntMakePostDropdownElement>;
+            "mynt-mark-nsfw": LocalJSX.MyntMarkNsfw & JSXBase.HTMLAttributes<HTMLMyntMarkNsfwElement>;
             "mynt-market": LocalJSX.MyntMarket & JSXBase.HTMLAttributes<HTMLMyntMarketElement>;
             "mynt-menu": LocalJSX.MyntMenu & JSXBase.HTMLAttributes<HTMLMyntMenuElement>;
             "mynt-message": LocalJSX.MyntMessage & JSXBase.HTMLAttributes<HTMLMyntMessageElement>;
@@ -653,7 +680,6 @@ declare module "@stencil/core" {
             "mynt-profile-header": LocalJSX.MyntProfileHeader & JSXBase.HTMLAttributes<HTMLMyntProfileHeaderElement>;
             "mynt-root": LocalJSX.MyntRoot & JSXBase.HTMLAttributes<HTMLMyntRootElement>;
             "mynt-sell-asset": LocalJSX.MyntSellAsset & JSXBase.HTMLAttributes<HTMLMyntSellAssetElement>;
-            "mynt-sell-asset-item": LocalJSX.MyntSellAssetItem & JSXBase.HTMLAttributes<HTMLMyntSellAssetItemElement>;
             "mynt-send-asset": LocalJSX.MyntSendAsset & JSXBase.HTMLAttributes<HTMLMyntSendAssetElement>;
             "mynt-settings": LocalJSX.MyntSettings & JSXBase.HTMLAttributes<HTMLMyntSettingsElement>;
             "mynt-side-list": LocalJSX.MyntSideList & JSXBase.HTMLAttributes<HTMLMyntSideListElement>;

@@ -23,6 +23,8 @@ export class MyntMakePost {
       this.presentSellAsset();
     } else if (this.sendAsset) {
       this.presentSendAsset();
+    } else if (this.markNSFW) {
+      this.presentMarkNSFW();
     }
   }
 
@@ -78,6 +80,19 @@ export class MyntMakePost {
     console.log('onDidDismiss resolved with role', role);
   }
 
+  async presentMarkNSFW() {
+    const popover = await popoverController.create({
+      component: 'mynt-mark-nsfw',
+      //cssClass: 'my-custom-class',//////CHANGE
+      translucent: true
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    this.markNSFW = false;
+    console.log('onDidDismiss resolved with role', role);
+  }
+
   render() {
 
     this.toggleController();
@@ -105,7 +120,7 @@ export class MyntMakePost {
           <ion-toggle checked={this.viewRestrictions} onIonChange={(ev) => this.viewRestrictions = ev.detail.checked}></ion-toggle><ion-label>Viewing Restrictions</ion-label>
           <ion-toggle checked={this.sellAsset} onIonChange={(ev) => this.sellAsset = ev.detail.checked}></ion-toggle><ion-label>Sell an Asset</ion-label>
           <ion-toggle checked={this.sendAsset} onIonChange={(ev) => this.sendAsset = ev.detail.checked}></ion-toggle><ion-label>Send an Asset</ion-label>
-          <ion-toggle checked={this.markNSFW}></ion-toggle><ion-label>Mark as NSFW</ion-label>
+          <ion-toggle checked={this.markNSFW} onIonChange={(ev) => this.markNSFW = ev.detail.checked}></ion-toggle><ion-label>Mark as NSFW</ion-label>
         </ion-item>
       </ion-card>
     );

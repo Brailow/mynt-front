@@ -1,11 +1,11 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'mynt-sell-asset-item',
-  styleUrl: 'mynt-sell-asset-item.css',
+  tag: 'mynt-asset-item',
+  styleUrl: 'mynt-asset-item.css',
   shadow: true,
 })
-export class MyntSellAssetItem {
+export class MyntAssetItem {
 
   render() {
     return (

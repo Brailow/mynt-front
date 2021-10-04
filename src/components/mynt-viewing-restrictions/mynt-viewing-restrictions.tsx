@@ -9,9 +9,16 @@ export class MyntViewingRestrictions {
 
   render() {
     return (
-      <Host>
+      <mynt-make-post-dropdown>
+        <ion-item>
+          <ion-input placeholder="Search all coins"></ion-input>
+          <ion-button>Search</ion-button>
+        </ion-item>
+        <ion-list>
+          <mynt-asset-item></mynt-asset-item>
+        </ion-list>
         <slot></slot>
-      </Host>
+      </mynt-make-post-dropdown>
     );
   }
 

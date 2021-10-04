@@ -9,9 +9,10 @@ export class MyntSendAsset {
 
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <mynt-viewing-restrictions>
+        <ion-input placeholder="Send to..."></ion-input>
+      </mynt-viewing-restrictions>
+
     );
   }
 
