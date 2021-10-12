@@ -98,7 +98,7 @@ export class MyntMakePost {
     this.toggleController();
 
     return (
-      <ion-card>
+      <ion-card class="make-post">
         <ion-item>
           <profile-pic source="https://pbs.twimg.com/profile_images/1401837042934468611/okzqIoMb_400x400.jpg"></profile-pic>
           <ion-button shape="round" expand="block">What's on your mind?</ion-button>
