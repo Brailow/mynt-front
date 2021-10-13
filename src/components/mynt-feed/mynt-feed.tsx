@@ -48,14 +48,11 @@ export class MyntFeed {
   render() {
     return (
       <mynt-page>
-        <ion-col slot="side">
-          <ion-card><h1>Trending</h1></ion-card>
-          <mynt-side-list ttle="Following"></mynt-side-list>
-          <mynt-side-list ttle="Wallet"></mynt-side-list>
-        </ion-col>
-        <ion-col slot="main">
-          <mynt-make-post></mynt-make-post>
-          <ion-content>
+          <ion-card slot="side"><h1>Trending</h1></ion-card>
+          <mynt-side-list ttle="Following" slot="side"></mynt-side-list>
+          <mynt-side-list ttle="Wallet" slot="side"></mynt-side-list>
+          <mynt-make-post slot="main"></mynt-make-post>
+          <ion-content slot="main">
             <ion-list>
               {this.data.map(item =>
                 <ion-item>
@@ -73,7 +70,6 @@ export class MyntFeed {
               </ion-infinite-scroll-content>
             </ion-infinite-scroll>
           </ion-content>
-        </ion-col>
       </mynt-page>
     );
   }

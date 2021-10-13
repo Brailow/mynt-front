@@ -50,15 +50,12 @@ export class MyntMarket {
   render() {
     return (
         <mynt-page>
-            <ion-col slot="side">
-              <ion-card><h1>Recent Listings</h1></ion-card>
-              <mynt-side-list ttle="Coins"></mynt-side-list>
-              <mynt-side-list ttle="Tokens"></mynt-side-list>
-              <mynt-side-list ttle="Physical"></mynt-side-list>
-              <mynt-side-list ttle="Digital"></mynt-side-list>
-            </ion-col>
-            <ion-col slot="main">
-            <ion-content>
+              <ion-card slot="side"><h1>Recent Listings</h1></ion-card>
+              <mynt-side-list ttle="Coins" slot="side"></mynt-side-list>
+              <mynt-side-list ttle="Tokens" slot="side"></mynt-side-list>
+              <mynt-side-list ttle="Physical" slot="side"></mynt-side-list>
+              <mynt-side-list ttle="Digital" slot="side"></mynt-side-list>
+            <ion-content slot="main">
               <ion-list>
                 {this.data.map(item =>
                   <ion-item>
@@ -76,7 +73,6 @@ export class MyntMarket {
                 </ion-infinite-scroll-content>
               </ion-infinite-scroll>
             </ion-content>
-            </ion-col>
         </mynt-page>
     );
   }
