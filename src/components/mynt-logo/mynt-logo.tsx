@@ -9,7 +9,7 @@ export class MyntLogo {
 
   render() {
     return (
-      <ion-icon src="/myntlogo.svg" size="large"></ion-icon>
+      <ion-icon src="assets/myntlogo.svg" size="large"></ion-icon>
     );
   }
 

@@ -65,7 +65,6 @@ export class MyntMenu {
 
         <ion-tab-bar slot="top">
           <mynt-logo></mynt-logo>
-          <ion-icon name="notifications-outline" size="large"></ion-icon>
           <ion-label>mynt</ion-label>
           <ion-searchbar></ion-searchbar>
           <ion-tab-button tab="mynts">
