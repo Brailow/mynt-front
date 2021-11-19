@@ -14,7 +14,7 @@ export class MyntSideListing {
     return (
       <ion-item>
         <profile-pic source={this.image}></profile-pic>
-        <ion-card-title>{this.text}</ion-card-title>
+        <ion-label>{this.text}</ion-label>
       </ion-item>
     );
   }

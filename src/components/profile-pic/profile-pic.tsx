@@ -13,7 +13,7 @@ export class ProfilePic {
   render() {
     return [
       <ion-avatar>
-        <ion-img src={this.source}/>
+        <img src={this.source}/>
       </ion-avatar>
     ];
   }
